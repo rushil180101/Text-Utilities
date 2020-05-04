@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website | Home</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+<nav class="navbar navbar-dark bg-primary">
+  <a class="navbar-brand" href="#">Text Utilities</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+      <a class="nav-item nav-link" href="#">About Us</a>
+    </div>
+  </div>
+</nav>
+
+<div class="alert alert-success" role="alert">
+    <strong>Welcome to Text Analyzer !!!</strong>
+</div>
+
+<div style="margin: auto;  width: 50%;  border: 1px solid green;  padding: 20px;">
+<form action="/analyze" method="post"> {% csrf_token %}
+
+  <div class="form-group">
+      <label for="exampleFormControlTextarea1"><strong>Enter your text here</strong></label>
+    <textarea required name="text" style="margin: 0px; width: 755px; height: 300px;" class="form-control" id="exampleFormControlTextarea1"></textarea>
+  </div>
+
+    <div class="alert alert-info" role="alert">
+    Select the utilities you want to apply on our text
+    </div>
+
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="removepunc" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1">Remove punctuations</label>
+    </div>
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="uppercase" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2">Convert text to UPPER CASE</label>
+    </div>
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="removeNums" class="custom-control-input" id="customSwitch3">
+  <label class="custom-control-label" for="customSwitch3">Remove Numbers</label>
+    </div>
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="removeNewLine" class="custom-control-input" id="customSwitch4">
+  <label class="custom-control-label" for="customSwitch4">Remove New Lines</label>
+    </div>
+    <div class="custom-control custom-switch">
+  <input type="checkbox" name="charcount" class="custom-control-input" id="customSwitch5">
+  <label class="custom-control-label" for="customSwitch5">Count number of characters</label>
+    </div>
+    <hr>
+    <button type="submit" class="btn btn-info">Analyze</button>
+
+</form>
+</div>
+
+</body>
+</html>
